@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin,combineLatest, of } from 'rxjs';
-import { map, zip, switchMap, flatMap,mergeMap, shareReplay } from 'rxjs/operators';
+import { map, zip, switchMap, flatMap,mergeMap, shareReplay, pluck } from 'rxjs/operators';
 import { Usuario } from '../models/usuario.model';
 
 
@@ -13,7 +13,7 @@ const URL = 'https://jsonplaceholder.typicode.com/';
 export class BdService {
 
   usuarios: Observable<Usuario>;
-  albums: Observable<any>;;
+  albums: any;
   albumId$: Observable<any>;
   all: any;
 
@@ -36,12 +36,23 @@ export class BdService {
   }
 
 
+
+  getAlbumsUser(id: any){
+    this.http.get(URL + `users/${id}/albums`).subscribe(
+      resp =>{
+         this.albums=resp;
+      }
+    );
+
+    return this.albums;
+  }
+
+
   getAll(){
-    this.http.get(URL + 'albums').pipe(
-      switchMap( (resp: any) => this.http.get(URL + 'users/'+resp.userId )
-    )).subscribe(
-          aa => console.log(aa)
-        )
+    return this.http.get(URL + 'albums').pipe(
+      pluck('userId'),
+      map( resp => console.log(resp))
+      )
 }
 
 

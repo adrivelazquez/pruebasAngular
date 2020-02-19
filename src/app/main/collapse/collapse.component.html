@@ -8,12 +8,9 @@
         </button>
       </h2>
     </div>
-    
-    <div [attr.id]="'collapse'+user.id" class="collapse" [attr.aria-labelledby]="'heading'+user.id" data-parent="#accordionExample">
-      <div class="card-body">
 
-      </div>
-    </div>
+    <app-content-collapse [idCollapse]="'collapse'+user.id" [heading]="'heading'+user.id" [id]="user.id"></app-content-collapse>
+    
   </div>
   
 </div> 

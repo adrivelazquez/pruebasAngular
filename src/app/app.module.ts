@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './main/home/home.component';
 import { HttpClientModule  } from '@angular/common/http';
 import { CollapseComponent } from './main/collapse/collapse.component';
+import { ContentCollapseComponent } from './main/content-collapse/content-collapse.component';
 
 
 
@@ -14,7 +15,8 @@ import { CollapseComponent } from './main/collapse/collapse.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    CollapseComponent
+    CollapseComponent,
+    ContentCollapseComponent
 
   ],
   imports: [

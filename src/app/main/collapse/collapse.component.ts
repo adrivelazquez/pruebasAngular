@@ -23,8 +23,8 @@ export class CollapseComponent implements OnInit {
     this._service.getUsuarios().subscribe(
       (resp: Usuario[]) => {
         this.usuarios=resp;
-        console.log(resp);
       });
+
   }
 
 }
