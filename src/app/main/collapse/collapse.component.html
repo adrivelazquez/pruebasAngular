@@ -1,0 +1,19 @@
+<div class="accordion" id="accordionExample">
+
+  <div class="card" *ngFor="let user of usuarios">
+    <div class="card-header" [attr.id]="'heading'+user.id"> 
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" [attr.data-target]="'#collapse'+user.id" aria-expanded="false" [attr.aria-controls]="'collapse'+user.id">
+          {{user.name}}
+        </button>
+      </h2>
+    </div>
+    
+    <div [attr.id]="'collapse'+user.id" class="collapse" [attr.aria-labelledby]="'heading'+user.id" data-parent="#accordionExample">
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+  
+</div> 
