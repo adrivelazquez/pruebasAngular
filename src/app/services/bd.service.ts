@@ -38,13 +38,7 @@ export class BdService {
 
 
   getAlbumsUser(id: any){
-    this.http.get(URL + `users/${id}/albums`).subscribe(
-      resp =>{
-         this.albums=resp;
-      }
-    );
-
-    return this.albums;
+    return this.http.get(URL + `users/${id}/albums`);
   }
 
 

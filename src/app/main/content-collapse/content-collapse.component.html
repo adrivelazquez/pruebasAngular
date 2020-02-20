@@ -3,7 +3,7 @@
 <div [attr.id]="idCollapse" class="collapse" [attr.aria-labelledby]="heading" data-parent="#accordionExample">
   <div class="card-body" >
 
-    <!--<h3>{{ album.title }}</h3>-->
+    <p *ngFor="let album of albums">{{ album.title }}</p>
 
   </div>
 </div> 

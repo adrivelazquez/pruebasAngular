@@ -9,12 +9,8 @@ import { BdService } from 'src/app/services/bd.service';
 export class ContentCollapseComponent implements OnInit {
 
   @Input() idCollapse:string='';
-  @Input() id:any='';
   @Input() heading:string='';
-
-  albunes: any;
-
-
+  @Input() albums: any;
 
 
   constructor(private _service: BdService) {
@@ -22,7 +18,7 @@ export class ContentCollapseComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.id);
   }
+
 
 }
